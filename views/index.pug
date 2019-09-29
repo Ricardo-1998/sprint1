@@ -1,0 +1,79 @@
+extend layout
+block content 
+  
+
+  nav
+    .nav-wrapper(style = "background-color: #212129")
+      a.navbar_color(style='margin-left: 1em; font-size: 1.5em')
+        
+        |Nombre pagina web 
+      ul(id="nav-mobile" class="right hide-on-med-and-down")
+        li
+          a(class="waves-effect waves-light btn modal-trigger" data-target="modal1") signin
+          div(id="modal1" class="modal")
+            div(class="modal-content")
+              
+              form(method='POST' action='users/signin')
+                div(class="input-field")
+                    input(id="email" type='email' name='email' require value=email?email:'')
+                    label(for="email" style="font-size:1rem") Email
+                
+                div(class="input-field")
+                    input(id="pass" type='password' name='password')
+                    label(for="pass" style="font-size:1rem") Password
+                br
+                input(type='submit' value='Entrar') 
+        li
+          a(class="waves-effect waves-light btn modal-trigger" data-target="modal2") signup
+          div(id="modal2" class="modal")
+            div(class="modal-content")
+              form(method='POST' action='users/signup')
+                div(class="input-field")
+                  input(id="name" type='text' name='name' required)
+                  label(for="name" style="font-size:1rem") Nombre
+                div(class="input-field")
+                  input(id="apellido" type='text' name='apellido' required)
+                  label(for="apellido" style="font-size:1rem") Apellido
+
+                .input-field.col.s12
+                  select(id="sexo" name='sexo' required)
+                    option(value='', disabled='', selected='') Sexo
+                    option(value='Masculino') Masculino
+                    option(value='Femenino') Femenino 
+
+                div(class="input-field")
+                  input(id="username" type='text' name='username' required)
+                  label(for="username" style="font-size:1rem") Username
+
+                div(class="input-field")
+                  input(id="email1" type='email' name='email' require value=email?email:'')
+                  label(for="email1" style="font-size:1rem") Email
+              
+                div(class="input-field")
+                    input(id="pass1" type='password' name='password' required)
+                    label(for="pass1" style="font-size:1rem") Password
+
+                
+
+                br
+                input(type='submit' value='Registrar')
+  
+  
+  footer(class="page-footer" style = "background-color: #212129")
+    .container
+      .row
+        .col.l6.s12(style="font-size=10px")
+            h5 Contactos
+            p
+              a.grey-text.text-lighten-3(href='https://www.facebook.com/profile.php?id=100000583794553') Contacto 1: Ricardo Villeda 
+            p
+              a.grey-text.text-lighten-3(href='https://www.facebook.com/profile.php?id=100000583794553') Contacto 2: Mario De Leon
+            
+        
+    .footer-copyright
+      .container
+        | © 2018 Copyright Text
+        
+    
+      
+

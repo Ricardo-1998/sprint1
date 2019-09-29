@@ -1,0 +1,13 @@
+extends layout
+block content
+    header
+        p(id='global12' style='font-size: 0.01px; position: fixed') #{JSON.parse(session.user).username}
+        nav
+          .nav-wrapper(style = "background-color: #212129")
+            a.navbar_color(style='margin-left: 1em; font-size: 1.5em'  href = '/')
+              i.fas.fa-crow
+              | Goth music
+            ul#nav-mobile.right.hide-on-med-and-down
+              li
+                a.navbar_color(href='/users/logout') Log out
+    block contentMain
